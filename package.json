@@ -1,0 +1,42 @@
+{
+  "name": "remark-preact-renderer",
+  "version": "0.0.1",
+  "description": "preact renderer for remark-render",
+  "scripts": {
+    "test": "mocha test/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vmarkdown/remark-preact-renderer.git"
+  },
+  "keywords": [
+    "markdown",
+    "remark",
+    "vdom",
+    "virtual-dom",
+    "preact",
+    "renderer"
+  ],
+  "main": "index.js",
+  "files": [
+    "src"
+  ],
+  "author": "yucopowo@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vmarkdown/remark-preact-renderer/issues"
+  },
+  "homepage": "https://github.com/vmarkdown/remark-preact-renderer#readme",
+  "devDependencies": {
+    "preact": "^8.3.1",
+    "preact-render-to-string": "^3.8.2",
+    "pretty": "^2.0.0",
+    "remark-parse": "^5.0.0",
+    "remark-render": "^0.0.11",
+    "to-vfile": "^5.0.1",
+    "unified": "^7.0.0"
+  },
+  "dependencies": {
+    "extend": "^3.0.2"
+  }
+}
