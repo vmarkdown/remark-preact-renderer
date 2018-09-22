@@ -1,6 +1,6 @@
 {
   "name": "remark-preact-renderer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "preact renderer for remark-render",
   "scripts": {
     "test": "mocha test/**/*.js"

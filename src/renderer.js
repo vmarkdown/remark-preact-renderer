@@ -21,6 +21,17 @@ var extend = require('extend');
 
 function props(node, defaultProps) {
     var dataProps = extend({}, node.properties);
+    if(node.position
+        // && node.type !== 'root'
+        // && node.type !== 'text' && node.type !== 'strong'
+        // && node.type !== 'list' && node.type !== 'table'
+        // && node.type !== 'link' && node.type !== 'linkReference'
+        && node.position.start.column === 1) {
+        dataProps = extend({
+            'data-line-start': node.position.start.line,
+            'data-line-end': node.position.end.line
+        }, dataProps);
+    }
     return extend({}, dataProps, defaultProps);
 }
 
@@ -47,6 +58,19 @@ module.exports = {
     },
 
     listItem : function(h, node, children) {
+        if(node.hasOwnProperty('checked') && node.checked !== null) {
+            if(children && children.length>0 && children[0].children) {
+                children[0].children.unshift(
+                    h('input', {
+                        type: 'checkbox',
+                        className: ['list-item-checkbox'],
+                        checked: node.checked,
+                        readonly: true,
+                        disabled: true,
+                    })
+                );
+            }
+        }
         return h('li', props(node), children);
     },
 

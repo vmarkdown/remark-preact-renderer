@@ -17,3 +17,7 @@ const vdom = processor.processSync(file).contents;
 const render = require('preact-render-to-string');
 const html = render(vdom);
 console.log(pretty(html));
+
+
+console.log(unified()
+    .use(parse).parse(file));
