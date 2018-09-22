@@ -19,17 +19,21 @@
 
 var extend = require('extend');
 
+// data-position = "1:2"
+
 function props(node, defaultProps) {
     var dataProps = extend({}, node.properties);
     if(node.position
-        // && node.type !== 'root'
+        && node.type !== 'root'
         // && node.type !== 'text' && node.type !== 'strong'
         // && node.type !== 'list' && node.type !== 'table'
         // && node.type !== 'link' && node.type !== 'linkReference'
-        && node.position.start.column === 1) {
+        // && node.position.start.column === 1
+    ) {
         dataProps = extend({
-            'data-line-start': node.position.start.line,
-            'data-line-end': node.position.end.line
+            'data-line': node.position.start.line
+            // 'data-line-start': node.position.start.line,
+            // 'data-line-end': node.position.end.line
         }, dataProps);
     }
     return extend({}, dataProps, defaultProps);
