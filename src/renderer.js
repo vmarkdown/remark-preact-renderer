@@ -6,6 +6,7 @@
     "type": "heading",
     "depth": 1 <= number <= 6,
     "tagName": "a",
+    "parent": parent,
     "properties": {
         "href": "http://alpha.com",
         "id": "bravo",
