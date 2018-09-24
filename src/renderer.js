@@ -145,6 +145,10 @@ module.exports = {
         }));
     },
 
+    imageReference: function(h, node, children) {
+
+    },
+
     text : function(h, node) {
         return h('span', props(node), node.value);
     },

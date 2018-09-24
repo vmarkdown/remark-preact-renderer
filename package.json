@@ -1,6 +1,6 @@
 {
   "name": "remark-preact-renderer",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "preact renderer for remark-render",
   "scripts": {
     "pub": "npm publish .",
