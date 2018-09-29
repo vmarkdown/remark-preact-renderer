@@ -194,10 +194,21 @@ module.exports = {
     },
 
     footnote : function(h, node, children) {
-
+        return h('span', props(node), children);
     },
 
     footnoteReference : function(h, node, children) {
+        return h('a', props(node, {
+            id: node.ref,
+            className: 'footnote-reference',
+            href: '#'+node.def
+        }), node.value);
+    },
 
-    }
+    footnoteDefinition : function(h, node, children) {
+        return h('div', props(node, {
+            id: node.def,
+            className: 'footnote-definition'
+        }), children);
+    },
 };
